@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "backup_script.sh"
 
 
-  config.vm.dfine "box1" do |box1|
+  config.vm.dfine "box1" do |box1| ##ERROR: "dfine" doesn't exit! double-check spelling
 
 
        #box1.vm.provision "shell", inline: <<-SHELL
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
 
      end
 
-  config.vm.dfine "box2" do |box2|
+  config.vm.dfine "box2" do |box2| ##ERROR: "dfine" doesn't exit!double-check spelling
 
         #box2.vm.provision "shell", path: "backup_script.sh"
                  #sudo apt-get install -y nginx
@@ -44,9 +44,9 @@ Vagrant.configure("2") do |config|
 
       end
 
-config.vm.dfine "box3" do |box3|
+config.vm.dfine "box3" do |box3| ##ERROR: "dfine" doesn't exit! double-check spelling
 
-        box3.vm.provision "shell", inline: <<-SHELL
+        box3.vm.provision "shell", inline: <<-SHELL 
                  sudo apt-get install -y apache2
 
                  SHELL
@@ -54,7 +54,7 @@ config.vm.dfine "box3" do |box3|
 
          box3.vm.box="ubuntu/xenial64"
 
-         box3.vm.network :forwarded_port, guest: 22, host: 10223, id: "ssh"
+         box3.vm.network :forwarded_port, guest: 22, host: 10223, id: "ssh" ##ERROR: Host 10223 has been used. Use different host number
 
          box3.vm.network :private_network, ip: "192.168.56.103"
 
